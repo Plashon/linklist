@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Drag and Drop Train Carriages</title>
+    <style>
+      #toolbar {
+        margin: 10px 0;
+        padding: 10px;
+        background-color: #eee;
+      }
+      .carriage {
+        display: inline-block; /* แสดงโบกี้ในแนวนอน */
+        margin: 5px;
+        padding: 30px;
+        border: 1px solid #ddd;
+        background-color: #f0f0f0;
+        cursor: move;
+        background-image: url("/รูป/midTrain.png"); 
+         background-size: cover;
+      }
+      .carriage:hover {
+        padding: 100px;  
+      }
+      /* ตกแต่ง style สำหรับ carriage ที่เป็นตัวแรก */
+      #train .carriage:first-child {
+        border-top-left-radius: 15px;
+        border-bottom-left-radius: 15px;
+        background-image: url("/รูป/fristTrain.png"); /* เปลี่ยน 'first_carriage_image.jpg' เป็น URL ของรูปภาพที่ต้องการใช้ */
+        background-size: cover; /* ให้รูปภาพขยายเต็มพื้นที่ */
+      }
+
+      /* ตกแต่ง style สำหรับ carriage ที่เป็นตัวสุดท้าย */
+      #train .carriage:last-child {
+        border-top-right-radius: 15px;
+        border-bottom-right-radius: 15px;
+        background-image: url("/รูป/lastTrain.png"); /* เปลี่ยน 'last_carriage_image.jpg' เป็น URL ของรูปภาพที่ต้องการใช้ */
+        background-size: cover; /* ให้รูปภาพขยายเต็มพื้นที่ */
+      }
+      #train {
+        margin: 20px;
+        padding: 30px;
+        border: 1px solid #000;
+        min-height: 100px;
+        white-space: nowrap; /* ให้โบกี้ไม่ขึ้นบรรทัดใหม่ */
+        overflow-x: auto; /* เพิ่ม scrollbar แนวนอนถ้าจำเป็น */
+      }
+    </style>
+  </head>
+  <body>
+    <div id="toolbar">
+      <button onclick="addCarriage()">เพิ่มโบกี้</button>
+    </div>
+    <div id="train">
+      <!-- โบกี้รถไฟจะถูกเพิ่มที่นี่ -->
+    </div>
+
+    <script src="dragdrop.js"></script>
+  </body>
+</html>
